@@ -2,7 +2,7 @@ var express = require('express');
 var mongojs = require("mongojs");
 var applications = require('./public/features/services/server.js');
 var app = express();
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/'));
 app.use(express.bodyParser());
 var mongodbConnectionString = process.env.OPENSHIFT_MONGODB_DB_URL + "MEANStack";
 if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
@@ -25,4 +25,7 @@ app.get("/env",function(req,res){
     res.json(process.env);
 });
 
-app.listen(port,ipaddress);
+var server = app.listen(port, ipaddress, function () {
+    console.log("Hello:");
+    console.log(process.env);
+});
