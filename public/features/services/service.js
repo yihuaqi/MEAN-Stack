@@ -15,11 +15,7 @@ app.factory("ApplicationsService", function ($http) {
     };
 
     var update = function (id, application, callback) {
-        console.log("What is the fuuuuuuuuuuuuuuuuck?!");
-        console.log("Update:" + application.name);
         $http.put("/applications/" + id, application).success(callback);
-
-        //$http.post("/applications", application).success(callback);
     };
     var remove = function (id, callback) {
         $http.delete("/applications/" + id).success(callback);
