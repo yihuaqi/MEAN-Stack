@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public/'));
 app.use(express.bodyParser());
 var mongodbConnectionString = process.env.OPENSHIFT_MONGODB_DB_URL + "meanstack";
 if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
-    mongodbConnectionString = "meanstack";
+    mongodbConnectionString = "MEANStack";
 }
 
 var db = mongojs(mongodbConnectionString,["applications"]);

@@ -15,6 +15,7 @@ app.controller("ApplicationsEditCtrl", ["$scope", "$http", "ApplicationsService"
             console.log(response);
         });
         window.history.go(-1);
+        $scope.all();
         
     };
 
@@ -23,6 +24,7 @@ app.controller("ApplicationsEditCtrl", ["$scope", "$http", "ApplicationsService"
             ApplicationsService.selectAll($scope.renderServiceClients);
         });
         window.history.go(-1);
+        $scope.all();
     };
 
 
@@ -38,6 +40,7 @@ app.controller("ApplicationsNewCtrl", ["$scope", "$http", "ApplicationsService",
             ApplicationsService.selectAll($scope.renderServiceClients);
         });
         window.history.go(-1);
+        $scope.all();
     };
     
 
