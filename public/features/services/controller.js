@@ -12,19 +12,20 @@ app.controller("ApplicationsEditCtrl", ["$scope", "$http", "ApplicationsService"
         console.log("Update id:" + $routeParams.id);
         console.log("Update name:" + $scope.newApplication.name);
         ApplicationsService.update(appId, $scope.newApplication, function (response) {
-            console.log(response);
+            window.history.go(-1);
+            $scope.all();
         });
-        window.history.go(-1);
-        $scope.all();
+
         
     };
 
     $scope.remove = function () {
         ApplicationsService.remove(appId, function () {
-            ApplicationsService.selectAll($scope.renderServiceClients);
+//            ApplicationsService.selectAll($scope.renderServiceClients);
+            window.history.go(-1);
+            $scope.all();
         });
-        window.history.go(-1);
-        $scope.all();
+        
     };
 
 
@@ -37,10 +38,11 @@ app.controller("ApplicationsNewCtrl", ["$scope", "$http", "ApplicationsService",
     $scope.create = function () {
         
         ApplicationsService.create($scope.application, function () {
-            ApplicationsService.selectAll($scope.renderServiceClients);
+            //ApplicationsService.selectAll($scope.renderServiceClients);
+            window.history.go(-1);
+            $scope.all();
         });
-        window.history.go(-1);
-        $scope.all();
+
     };
     
 
