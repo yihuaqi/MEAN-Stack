@@ -5,9 +5,9 @@ var applications = require('./public/features/services/server.js');
 var app = express();
 app.use(express.static(__dirname + '/public/'));
 app.use(express.bodyParser());
-var mongodbConnectionString = process.env.OPENSHIFT_MONGODB_DB_URL + "MEANStack";
+var mongodbConnectionString = process.env.OPENSHIFT_MONGODB_DB_URL + "meanstack";
 if(typeof process.env.OPENSHIFT_MONGODB_DB_URL == "undefined"){
-    mongodbConnectionString = "MEANStack";
+    mongodbConnectionString = "meanstack";
 }
 
 var db = mongojs(mongodbConnectionString,["applications"]);
