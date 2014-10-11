@@ -1,3 +1,4 @@
+var http = require("http");
 var express = require('express');
 var mongojs = require("mongojs");
 var applications = require('./public/features/services/server.js');
